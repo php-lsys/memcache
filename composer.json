@@ -1,0 +1,17 @@
+{
+	"name": "lsys/memcache",
+	"type" : "library",
+	"license": "Apache-2.0",
+	"version" : "1.0.0",
+	"description" : "lsys module memcache",
+	"autoload":{
+		"psr-4": {
+        	"LSYS\\" : "src/classes/LSYS/"
+		}
+    },
+    "require": {
+     	"php": ">=5.5",
+		"ext-memcache": "*",
+     	"lsys/config":"~1.0.0"
+	}
+}

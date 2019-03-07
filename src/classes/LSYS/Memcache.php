@@ -40,7 +40,7 @@ class Memcache extends \Memcache{
             'retry_interval'   => 15,
             'status'           => TRUE,
             'instant_death'	   => TRUE,
-            'failure_callback' => array($this, '_failed_request'),
+            'failure_callback' => array($this, '_failedRequest'),
         );
         $this->_servers=$servers;
         // Add the memcache servers to the pool
@@ -66,7 +66,7 @@ class Memcache extends \Memcache{
      * @return  void|boolean
      * @since   3.0.8
      */
-    public function _failed_request($hostname, $port)
+    public function _failedRequest($hostname, $port)
     {
         if ( ! $this->_config->get('instant_death',true)) return;
         // Setup non-existent host
@@ -96,7 +96,7 @@ class Memcache extends \Memcache{
                 $host['timeout'],
                 $host['retry_interval'],
                 FALSE, // Server is offline
-                array($this, '_failed_request')
+                array($this, '_failedRequest')
             );
         }
     }

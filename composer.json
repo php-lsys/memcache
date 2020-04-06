@@ -10,7 +10,7 @@
     },
     "require": {
 		"ext-memcache": "*",
-     	"lsys/config":"~0.0.0"
+     	"lsys/config":"~0.0.1"
 	},
 	"require-dev" : {
 		"phpunit/phpunit" : "~7.1.5",

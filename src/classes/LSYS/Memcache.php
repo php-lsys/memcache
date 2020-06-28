@@ -66,7 +66,7 @@ class Memcache extends \Memcache{
      * @return  void|boolean
      * @since   3.0.8
      */
-    public function _failedRequest($hostname, $port)
+    public function _failedRequest($hostname,$port)
     {
         if ( ! $this->_config->get('instant_death',true)) return;
         // Setup non-existent host
